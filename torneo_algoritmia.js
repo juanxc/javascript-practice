@@ -3,26 +3,6 @@
 // (Z se convierte en A ) y así sucesivamente)
 
 function desencriptarMensaje(mensaje) {
-    const arr_alfabeto = 'abcdefghijklmnopqrstuvwxyz'.split('');
-    const arr_mensaje = mensaje.split('');
-    const arr_mensaje_desencriptado = arr_mensaje.map(function(car_mensaje){
-        let new_car='';
-        if(arr_alfabeto.includes(car_mensaje)){
-            const ind_car = arr_alfabeto.indexOf(car_mensaje);
-            if(ind_car === (arr_alfabeto.length - 1)){
-                new_car = arr_alfabeto[0];
-            }else{
-                new_car = arr_alfabeto[ind_car+1];
-            }
-        }else{
-            new_car = car_mensaje;
-        }
-        return new_car;
-    });
-    return arr_mensaje_desencriptado.join('');
-}
-
-function desencriptarMensaje_2(mensaje) {
     const arr_mensaje = mensaje.split('');
     const arr_mensaje_desencriptado = arr_mensaje.map(function(car_mensaje){
         let code_car_mensaje = car_mensaje.charCodeAt(0);
@@ -40,7 +20,7 @@ function desencriptarMensaje_2(mensaje) {
     return arr_mensaje_desencriptado.join('');
 }
 
-console.log(desencriptarMensaje_2("itmhnq dk ptd kdd"));
+console.log(desencriptarMensaje("itmhnq dk ptd kdd"));
 
 // 2. Genera nombres de super héroes
 // Crea una función que genere un nombre de super héroe combinando una palabra de un array de adjetivos y una palabra de un array de sustantivos.
